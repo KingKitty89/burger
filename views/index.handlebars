@@ -1,0 +1,88 @@
+{{!-- Setup the main.handlebars file so it's able to be used by Handlebars.
+
+
+Setup the index.handlebars to have the template that Handlebars can render onto.
+
+
+Create a button in index.handlebars that will submit the user input into the database. --}}
+<div class="container">
+
+    <div class="jumbotron" id="jumbotron">
+        
+        <h1>Eat-Da-Burger</h1>
+        <img src = "assets/icons/burger.png" id= "burger"></img>
+
+        <h2>Cook your burger then eat it!</h2>
+
+        <form class="create-form">
+            <div class="form-group">
+                <label for="newburger">New Burger:</label>
+                <input type="text" id="newburger" name="burger">
+                {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
+                <button type="submit" id="addburger"><img class="addburger" src="assets/icons/bbq.png"> </button>
+            </div>
+        </form>
+        </panel>
+    </div><!-- /jumbotron -->
+
+    <div class="row">
+        <!-- Undevoured Burgers -->
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading" id="lefthead"><strong>Your Burgers</strong></div>
+                <div class="panel-body">
+
+
+                    {{!-- Burgers that have not been devoured --}}
+
+                    <ul>
+                        {{#each burgers}}
+                        {{#unless devoured}}
+                        <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                         <button type="button"  id="eatburger"><img class="eatburger" src="assets/icons/teeth.png" data-id="{{this.id}}"
+                            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                        <hr>
+                        {{/unless}}
+                        {{/each}}
+                    </ul>
+                    </div>
+
+            </div>
+            </div>
+                    {{!-- Burgers that have been devoured --}}
+                    <!-- Devoured Burgers -->
+                    <div class="col-sm-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" id="righthead"><strong>Devoured Burgers</strong></div>
+                            <div class="panel-body">
+                                <ul>
+                                    {{#each burgers}}
+                                    {{#if devoured}}
+                                    <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
+                                    <button type="button"  id="trashbutton"><img class="trashburger" src="assets/icons/garbage.png"
+                                        data-id="{{this.id}}" data-newDevoured="{{devour}}">
+
+                                    </button>
+
+
+
+                                    <hr>
+                                    {{/if}}
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /row -->
+
+            </div>
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <footer>
+                        <div>Icons made by <a href="https://www.flaticon.com/authors/freepik"
+                                title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
+                                title="Flaticon">www.flaticon.com</a></div>
+                    </footer>
+                </div>
+            </div>
