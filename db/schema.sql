@@ -1,5 +1,5 @@
 ### Schema
-DROP DATABASE IF EXISTS wt3oj42sz9rezlrl;
+DROP DATABASE IF EXISTS burgers;
 
 CREATE DATABASE wt3oj42sz9rezlrl;
 USE wt3oj42sz9rezlrl;
