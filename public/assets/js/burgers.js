@@ -44,10 +44,13 @@ $(function() {
       var id = $(this).data("id");
 
       // Send the DELETE request.
-      $.ajax({
+      $.ajax("/api/burgers/" + id, {
           type: "DELETE",
-          url: "/api/burgers/" + id
-      }).then(location.reload());
+      }).then(
+        function() {
+          console.log("deleted burgers", id);
+          location.reload();
+        }
+      );
+    });
   });
-
-});
