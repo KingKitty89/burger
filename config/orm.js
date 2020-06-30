@@ -7,10 +7,10 @@ function printQuestionMarks(num) {
 
   for (var i = 0; i < num; i++) {
     arr.push("?");
-  }
+  };
 
   return arr.toString();
-}
+};
 
 // Helper function to convert object key/value pairs to SQL syntax
 function objToSql(ob) {
@@ -24,15 +24,15 @@ function objToSql(ob) {
       
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
-      }
+      };
       
       arr.push(key + "=" + value);
-    }
-  }
+    };
+  };
 
   // translate array of strings to a single comma-separated string
   return arr.toString();
-}
+};
 
 // Object for all our SQL statement functions.
 var orm = {
@@ -62,7 +62,6 @@ var orm = {
       if (err) {
         throw err;
       }
-
       cb(result);
     });
   },
@@ -80,8 +79,7 @@ var orm = {
       if (err) {
         throw err;
       }
-
-      cb(result);  
+    cb(result);  
     
     });  
   },
