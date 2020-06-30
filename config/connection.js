@@ -1,6 +1,6 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
-require("dotenv").config();
+// require("dotenv").config(); do i need this?
 
 var connection = mysql.createConnection({
   host: "localhost",
