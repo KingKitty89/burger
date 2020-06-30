@@ -1,8 +1,8 @@
 ### Schema
-DROP DATABASE IF EXISTS burgers_db;
+DROP DATABASE IF EXISTS wt3oj42sz9rezlrl;
 
-CREATE DATABASE burgers_db;
-USE burgers_db;
+CREATE DATABASE wt3oj42sz9rezlrl;
+USE wt3oj42sz9rezlrl;
 
 CREATE TABLE burgers
 (
