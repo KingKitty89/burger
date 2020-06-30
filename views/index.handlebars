@@ -1,10 +1,3 @@
-{{!-- Setup the main.handlebars file so it's able to be used by Handlebars.
-
-
-Setup the index.handlebars to have the template that Handlebars can render onto.
-
-
-Create a button in index.handlebars that will submit the user input into the database. --}}
 <div class="container">
 
     <div class="jumbotron" id="jumbotron">
@@ -16,70 +9,70 @@ Create a button in index.handlebars that will submit the user input into the dat
 
         <form class="create-form">
             <div class="form-group">
-                <label for="newburger">New Burger:</label>
-                <input type="text" id="newburger" name="burger">
-                {{!-- Create a button in index.handlebars that will submit the user input into the database. --}}
-                <button type="submit" id="addburger"><img class="addburger" src="assets/icons/bbq.png"> </button>
+                <label for="newburger">Add a burger</label>
+                 <input type="text" id="newburger" name="burger">
+                <button type="submit" id="addburger" class="addburger">Cook it!
+                <img src="assets/icons/bbq.png"> 
+                </button> 
             </div>
         </form>
         </panel>
-    </div><!-- /jumbotron -->
+    </div>
 
     <div class="row">
-        <!-- Undevoured Burgers -->
-        <div class="col-sm-6">
+         <div class="col-sm-6">
             <div class="panel panel-default">
-                <div class="panel-heading" id="lefthead"><strong>Your Burgers</strong></div>
-                <div class="panel-body">
-
-
-                    {{!-- Burgers that have not been devoured --}}
-
+                <div class="panel-heading" id="lefthead"><h4>Burgers waiting to be devoured</h4>
+                </div>
+                <div class="panel-body">           
+                    
+                    {{!-- Burgers waiting to be devoured  --}}
                     <ul>
                         {{#each burgers}}
                         {{#unless devoured}}
                         <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                         <button type="button"  id="eatburger"><img class="eatburger" src="assets/icons/teeth.png" data-id="{{this.id}}"
-                            data-newDevoured="{{devour}}"><span class="fa fa-cutlery"></span></button>
+                         <button type="button" id="eatburger" class="eatburger"
+                         data-id="{{this.id}}"data-newDevoured="{{devour}}">Devour it!
+                         <img src="assets/icons/teeth.png">
+                         </button>
                         <hr>
                         {{/unless}}
                         {{/each}}
                     </ul>
                     </div>
-
+                </div>
             </div>
-            </div>
-                    {{!-- Burgers that have been devoured --}}
-                    <!-- Devoured Burgers -->
+                   
+                   {{!-- Devoured Burgers --}}
                     <div class="col-sm-6">
                         <div class="panel panel-default">
-                            <div class="panel-heading" id="righthead"><strong>Devoured Burgers</strong></div>
+                            <div class="panel-heading" id="righthead"><h4>Devoured Burgers</h4>
+                            </div>
                             <div class="panel-body">
                                 <ul>
                                     {{#each burgers}}
                                     {{#if devoured}}
                                     <span><strong> {{this.id}} - {{this.burger_name}} </strong></span>
-                                    <button type="button"  id="trashbutton"><img class="trashburger" src="assets/icons/garbage.png"
-                                        data-id="{{this.id}}" data-newDevoured="{{devour}}">
-
+                                    <button type="button" id="trashbutton" class="trashburger" 
+                                        data-id="{{this.id}}" data-newDevoured="{{devour}}">Trash it!
+                                        <img src="assets/icons/garbage.png">
                                     </button>
-
-
-
-                                    <hr>
+                                     <hr>
                                     {{/if}}
                                     {{/each}}
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </div><!-- /row -->
+                </div>
 
             </div>
+            
+            {{!-- footer --}}
             <div class="row">
-
-                <div class="col-sm-6">
+                <div class="col-sm-12">
                     <footer>
+                       <p>Made with <img class = "love" src="assets/icons/heart.png"> by Jessica Helft</p>
                         <div>Icons made by <a href="https://www.flaticon.com/authors/freepik"
                                 title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"
                                 title="Flaticon">www.flaticon.com</a></div>
