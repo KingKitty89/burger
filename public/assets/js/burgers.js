@@ -1,4 +1,3 @@
-// Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
 
   // Add a new burger.
@@ -8,7 +7,7 @@ $(function() {
       var newBurger = {
           burger_name: $("#newburger").val().trim(),
           devoured: 0
-      };
+      }
 
       // Send the POST request.
       $.ajax("/api/burgers", {
@@ -51,4 +50,4 @@ $(function() {
       }).then(location.reload());
   });
 
-})
+});

@@ -1,4 +1,9 @@
 
+.container {
+  font-family: 'Bowlby One SC', cursive;
+  text-align: center; 
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -10,15 +15,33 @@ li {
 }
 
 .create-form {
-  padding: 5px;
+  padding: px;
   margin: 5px;
-  
-  
 }
 
 .form-group {
   margin-bottom: 5px;
 }
+
 #jumbotron {
+  background-color: aqua;  
+}
+
+.addburger, .eatburger, .trashburger {
+  padding: 10px;
+}
+
+#righthead, #lefthead {
   background-color: aqua;
 }
+
+.input {
+  padding: 200px;
+}
+
+footer {
+  padding: 30px;
+  text-align: center;
+  font-family: 'Bowlby One SC', cursive;  
+}
+
