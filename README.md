@@ -1,4 +1,4 @@
-# **Eat-Da-Bruger**
+# **Eat-Da-Burger**
 ------
 <img src="https://img.shields.io/badge/made%20by-KingKitty89-blue.svg" >
 
